@@ -9,14 +9,14 @@ export function Footer() {
       <div className="mx-auto max-w-6xl px-5 py-14 sm:px-8">
         <div className="grid gap-10 md:grid-cols-[1.4fr_1fr_1fr]">
           <div>
-            <a href="#home" className="flex items-center gap-2.5">
+            <Link to="/" className="flex items-center gap-2.5">
               <span className="grid h-9 w-9 place-items-center rounded-xl bg-accent-gradient font-display text-sm font-bold text-primary-foreground">
                 SA
               </span>
               <span className="font-display text-lg font-semibold text-foreground">
                 Syed Ahsan Shah
               </span>
-            </a>
+            </Link>
             <p className="mt-4 max-w-sm text-sm leading-relaxed text-muted-foreground">
               IT student and aspiring web developer, crafting clean digital experiences from Balochistan.
             </p>
@@ -27,9 +27,9 @@ export function Footer() {
             <ul className="grid grid-cols-2 gap-2 text-sm">
               {NAV_LINKS.map((l) => (
                 <li key={l.id}>
-                  <a href={`#${l.id}`} className="text-muted-foreground transition-colors hover:text-foreground">
+                  <Link to={l.to} className="text-muted-foreground transition-colors hover:text-foreground">
                     {l.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -64,9 +64,13 @@ export function Footer() {
             <Link to="/inbox" className="inline-flex items-center gap-1.5 transition-colors hover:text-cyan">
               <Lock className="h-3 w-3" /> Owner inbox
             </Link>
-            <a href="#home" className="inline-flex items-center gap-2 transition-colors hover:text-cyan">
+            <button
+              type="button"
+              onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+              className="inline-flex items-center gap-2 transition-colors hover:text-cyan"
+            >
               Back to top <ArrowUp className="h-3.5 w-3.5" />
-            </a>
+            </button>
           </div>
         </div>
       </div>

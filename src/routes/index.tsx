@@ -1,12 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Navbar } from "@/components/portfolio/Navbar";
+import { PageShell } from "@/components/portfolio/PageShell";
 import { Hero } from "@/components/portfolio/Hero";
-import { About } from "@/components/portfolio/About";
-import { Skills } from "@/components/portfolio/Skills";
-import { Projects } from "@/components/portfolio/Projects";
-import { Education } from "@/components/portfolio/Education";
-import { Contact } from "@/components/portfolio/Contact";
-import { Footer } from "@/components/portfolio/Footer";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -15,7 +9,7 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "Portfolio of Syed Ahsan Shah, IT student at the University of Balochistan and aspiring web developer. Skills, projects and contact.",
+          "Portfolio of Syed Ahsan Shah, IT student at the University of Balochistan and aspiring web developer.",
       },
       { property: "og:title", content: "Syed Ahsan Shah — IT Student & Aspiring Web Developer" },
       {
@@ -26,22 +20,13 @@ export const Route = createFileRoute("/")({
       { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
-  component: Index,
+  component: HomePage,
 });
 
-function Index() {
+function HomePage() {
   return (
-    <div className="min-h-screen bg-background">
-      <Navbar />
-      <main>
-        <Hero />
-        <About />
-        <Skills />
-        <Projects />
-        <Education />
-        <Contact />
-      </main>
-      <Footer />
-    </div>
+    <PageShell offsetNav={false}>
+      <Hero />
+    </PageShell>
   );
 }

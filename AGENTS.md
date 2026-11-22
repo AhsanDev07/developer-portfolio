@@ -30,6 +30,6 @@ use the editor.
 <!-- LOVABLE:END -->
 
 ## Project rules
-- Portfolio sections live in `src/components/portfolio/` and render as one scrolling page at `/` with hash anchors — the user explicitly asked for smooth-scrolling sections.
+- Portfolio sections live in `src/components/portfolio/`; each section has its own route (`/`, `/about`, `/skills`, `/projects`, `/education`, `/contact`) wrapped in `PageShell` — the user asked for separate pages, and each gets its own head() metadata.
 - Contact messages are inserted from the browser into `contact_messages` (anon INSERT only); reading is admin-only via `has_role` — keeps the owner inbox private without a server function.
 - Admin role is granted by a trigger on `auth.users` when the owner's email is confirmed — avoids any client-side role assignment.

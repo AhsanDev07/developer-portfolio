@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "@tanstack/react-router";
 import { ArrowRight, Github, Mail, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import portrait from "@/assets/ahsan-portrait.jpg.asset.json";
@@ -82,14 +83,14 @@ export function Hero() {
 
           <div className="mt-10 flex flex-wrap gap-4">
             <Button asChild variant="hero" size="xl">
-              <a href="#projects">
+              <Link to="/projects">
                 View My Projects <ArrowRight />
-              </a>
+              </Link>
             </Button>
             <Button asChild variant="glass" size="xl">
-              <a href="#contact">
+              <Link to="/contact">
                 <Mail /> Contact Me
-              </a>
+              </Link>
             </Button>
           </div>
 

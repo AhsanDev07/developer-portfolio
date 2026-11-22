@@ -12,12 +12,12 @@ export const PROFILE = {
 };
 
 export const NAV_LINKS = [
-  { id: "home", label: "Home" },
-  { id: "about", label: "About" },
-  { id: "skills", label: "Skills" },
-  { id: "projects", label: "Projects" },
-  { id: "education", label: "Education" },
-  { id: "contact", label: "Contact" },
+  { id: "home", label: "Home", to: "/" },
+  { id: "about", label: "About", to: "/about" },
+  { id: "skills", label: "Skills", to: "/skills" },
+  { id: "projects", label: "Projects", to: "/projects" },
+  { id: "education", label: "Education", to: "/education" },
+  { id: "contact", label: "Contact", to: "/contact" },
 ] as const;
 
 export type Project = {
