@@ -28,3 +28,8 @@ use the editor.
   own key and store it in Secrets.
 - **Secrets.** Lovable manages them. Do not put secret values in the repo.
 <!-- LOVABLE:END -->
+
+## Project rules
+- Portfolio sections live in `src/components/portfolio/` and render as one scrolling page at `/` with hash anchors — the user explicitly asked for smooth-scrolling sections.
+- Contact messages are inserted from the browser into `contact_messages` (anon INSERT only); reading is admin-only via `has_role` — keeps the owner inbox private without a server function.
+- Admin role is granted by a trigger on `auth.users` when the owner's email is confirmed — avoids any client-side role assignment.
