@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
+import portrait from "@/assets/ahsan-portrait.jpg.asset.json";
 import { NAV_LINKS } from "./data";
 import { cn } from "@/lib/utils";
 
@@ -41,8 +42,8 @@ export function Navbar() {
     >
       <nav className="mx-auto flex max-w-6xl items-center justify-between px-5 sm:px-8" aria-label="Main">
         <a href="#home" className="group flex items-center gap-2.5" onClick={() => setOpen(false)}>
-          <span className="grid h-9 w-9 place-items-center rounded-xl bg-accent-gradient font-display text-sm font-bold text-primary-foreground glow-primary">
-            SA
+          <span className="glow-primary grid h-9 w-9 place-items-center overflow-hidden rounded-xl bg-accent-gradient">
+            <img src={portrait.url} alt="" width={36} height={36} className="h-full w-full object-cover" />
           </span>
           <span className="font-display text-base font-semibold text-foreground">
             Ahsan<span className="text-cyan">.dev</span>

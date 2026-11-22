@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { ArrowRight, Github, Mail, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import heroVisual from "@/assets/hero-visual.jpg";
+import portrait from "@/assets/ahsan-portrait.jpg.asset.json";
 import { PROFILE } from "./data";
 
 const PHRASES = [
@@ -114,13 +114,16 @@ export function Hero() {
           <div className="absolute -inset-2 rounded-[2.5rem] bg-accent-gradient opacity-40 blur-2xl" />
           <div className="animate-float relative">
             <div className="gradient-border glass overflow-hidden rounded-[2rem] p-2">
-              <img
-                src={heroVisual}
-                alt="Glowing holographic code terminal representing Ahsan's developer workspace"
-                width={1254}
-                height={1254}
-                className="aspect-square w-full rounded-[1.6rem] object-cover"
-              />
+              <div className="relative">
+                <img
+                  src={portrait.url}
+                  alt="Ahsan Shah wearing sunglasses and a blue gradient shirt"
+                  width={828}
+                  height={828}
+                  className="aspect-square w-full rounded-[1.6rem] object-cover"
+                />
+                <div className="pointer-events-none absolute inset-0 rounded-[1.6rem] bg-gradient-to-t from-background/55 via-transparent to-transparent" />
+              </div>
             </div>
 
             <div className="glass absolute -left-4 top-8 rounded-2xl px-4 py-3 font-mono text-xs sm:-left-10">
